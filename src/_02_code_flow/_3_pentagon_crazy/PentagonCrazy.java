@@ -12,34 +12,38 @@ public class PentagonCrazy {
 	public static void main(String[] args) {
 		
 		//  Create a new Robot
-
+Robot rob = new Robot();
 		//  Put the robot's pen down
-
+rob.penDown();
 		//  SPEED. Make the robot go at maximum speed (100)
-
+rob.setSpeed(15);
 		//  COLOR. Set the pen to a color that you like for the shape
-
+rob.setRandomPenColor();
 		//  NUMBER OF SIDES. Make an int variable for the number of sides the shape will have.
 		//  				(Hint: its called PentagonCrazy)
-
+int count = 0;
+int sides = 6;
+int angle = 360/sides;
 		//  TURN ANGLE. Make another int variable for the angle the robot must turn. 
 		//  			Hint: Divide 360 by the number of sides the shape has to get the angle.
-		
+		rob.turn(angle);
 		//  COUNT. Make another int variable to count how many times the loop has repeated
 		//         Set its start value to zero.
-
+		count = count +1;
 		//  LOOP. Start a while loop to repeat the DRAW, TURN, and INCREASE COUNT code 200 times. 
-		
+		while (count<200) {
 				//  DRAW.  Make the robot move the amount in your count variable
 		
 				//  TURN.  Turn the robot the amount in your angle variable + 1
 
 				//  INCREASE COUNT. Increase the count by 1
-		
+		rob.move(5*count);
+		rob.turn(angle);
+		count = count+1;
 		//  End the while loop here
-
+		}
 		//  Now hide the robot so you can see the pattern it has drawn.
-		
+		rob.hide();
 		//  Run the program. 
 		//  Check the pattern against the picture in the recipe. If it matches, you are done!
 	

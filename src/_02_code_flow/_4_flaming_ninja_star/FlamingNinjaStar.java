@@ -13,7 +13,7 @@ public class FlamingNinjaStar {
 Robot rob = new Robot();
 rob.penDown();
 		// Set the robot speed to 100
-		rob.setSpeed(10);
+		rob.setSpeed(200);
 		// Set the robot window size to 800 x 800
 rob.setWindowSize(800, 800);
 		//  COUNT. Make another int variable to count how many times the loop has repeated
@@ -41,6 +41,15 @@ while(count<200) {
 		rob.turn(360/8);
 		rob.move(64);
 		rob.turn(-40);
+		rob.setRandomPenColor();
+		rob.move(flameSize);
+		rob.turn(170);
+		rob.move(flameSize);
+		rob.turn(64);
+		rob.move(baseSize);
+		count +=1;
+}
+	
 		
 		
 		

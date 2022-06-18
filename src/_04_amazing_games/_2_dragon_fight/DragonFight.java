@@ -1,6 +1,8 @@
 package _04_amazing_games._2_dragon_fight;
 
 import java.util.Random;
+import java.util.Set;
+
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 
@@ -14,16 +16,16 @@ public class DragonFight {
 		JOptionPane.showMessageDialog(null, "Defeat the dragon to take its treasure!", "Dragon Fighter", 0, dragon);
 
 		// 1. Create some variables to hold health levels
-		
+		int playerHealth=100;
 			// playerHealth to store your health - set it equal to 100
 	
 			// dragonHealth to store the dragon's health - set it equal to 100
-
+int dragonHealth=100;
 		// 2. Create some variables to hold the attack strengths. These will be given different values later. 
-		
+		int playerStrength=0;
 			// playerAttack to store the damage the player's attack will do - set it equal
 			// to 0 for now.
-	
+	int dragonStrength=0;
 			// dragonAttack to store the damage the dragon's attack will do - set it equal
 			// to 0 for now.
 
@@ -35,28 +37,35 @@ public class DragonFight {
 
 				// 3. Ask the player in a pop-up if they want to attack the dragon with a yell
 				// or a kick
-	
+			String input = JOptionPane.showInputDialog("do you want to attack the dragon with a yell or a kick?");
+
+
 				// 4. If they typed in "yell":
 	
 					  // -- Find a random number between 0 and 10 and store it in playerAttack. Use
 					  // ran.nextInt(10)
-			
+			if (input.equals("yell")) {                                                            
+			playerStrength=	ran.nextInt(9);
+			}
 				// 5. If they typed in "kick":
-	
+	if (input.equals("kick")) {
+		playerStrength=ran.nextInt(24);
+	}
 					  // -- Find a random number between 0 and 25 and store it in playerAttack.
 		
 				// 6. Subtract the player attack value from the dragon's health
-
+		 dragonHealth=dragonHealth-playerStrength;
 			// THE DRAGON RETALIATES
 
 				// 7. Find a random number between 0 and 35 and store it in dragonAttack
-	
+	dragonStrength= ran.nextInt(35);
 				// 8. Subtract the dragon attack value from the player's health
-
+playerHealth=playerHealth-dragonStrength;
 			// ASSESS THE DAMAGE
 
 				// 9. If the player's health is less than or equal to 0, the game is over,
 				//    call the playerLost() method
+	
 	
 			
 				// 10. If the dragon's health is less than or equal to 0, the game is over,

@@ -52,6 +52,7 @@ fill(#F70532);
 //    Use the x and y variables you just created to place the ellipse in the correct location.
 //                  The ellipse command looks like this:
                 ellipse(x, y, 85, 53);
+                ellipse(x+150, y-33, 85, 53);
 // Run the program to make sure it is in the right place and is the right size.
 }
 
@@ -61,7 +62,12 @@ fill(#F70532);
 void keyPressed() {
     x+=1;
     y+=1;
-    
+    if (x>500){
+      x=221;
+      y=173;
+      background(cat);
+    }
+        
 // 12.  If you want them to go faster, add more than one each time the key is pressed    
 }
  
